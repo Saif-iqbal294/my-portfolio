@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update portfolio</title>
+    <link rel="stylesheet" href="./port.css">
+</head>
+
+<body>
+
+    <div class="bg-shapes">
+        <div class="shape"></div>
+    </div>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo">
+                    <img src="./imgs/saif.jpeg" alt="logo img" width="80%" height="80%">
+                </div>
+                <div>
+                    <h1>Saif — Front‑End Developer</h1>
+                    <div style="color:var(--muted);font-size:13px">HTML • CSS • JavaScript • Angular • UI/UX</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main class="hero">
+            <div class="card intro reveal delay-1">
+                <h2>Hi — I'm Saif. I build clean, accessible web interfaces.</h2>
+                <p>I focus on front‑end development with HTML5, modern CSS, JavaScript, and Angular. I also design
+                    delightful interfaces for web & mobile apps.</p>
+                <div class="cta">
+                    <button class="btn btn-primary" onclick="scrollToSection('projects')">See projects</button>
+                    <button class="btn btn-outline" onclick="downloadResume()">Download resume</button>
+                </div>
+
+                <section id="about" style="margin-top:20px">
+                    <h3>About me</h3>
+                    <p style="color:var(--muted)">Graduate in <strong>[Your Degree]</strong>. Interested in responsive
+                        interfaces, animation, and accessible components. I enjoy turning designs into fast,
+                        maintainable code.</p>
+
+                    <div style="margin-top:12px">
+                        <h4 style="margin:0 0 8px">Key skills</h4>
+                        <div class="skills">
+                            <div class="skill">HTML5</div>
+                            <div class="skill">CSS3 (Flexbox, Grid)</div>
+                            <div class="skill">JavaScript (ES6+)</div>
+                            <div class="skill">Angular</div>
+                            <div class="skill">UI / Prototyping</div>
+                            <div class="skill">Responsive Design</div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <aside class="card profile reveal delay-2">
+                <div class="avatar">S</div>
+                <div class="meta">
+                    <div style="font-weight:800">Saif</div>
+                    <div style="font-size:13px;color:var(--muted)">Front‑End Developer</div>
+                    <div class="skills" style="justify-content:center;margin-top:12px">
+                        <div class="skill">Angular</div>
+                        <div class="skill">Figma</div>
+                    </div>
+                </div>
+
+                <div style="width:100%;margin-top:14px">
+                    <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted)">
+                        <div>Design</div>
+                        <div>85%</div>
+                    </div>
+                    <div class="bar" style="margin-top:8px"><i style="width:85%"></i></div>
+                    <div
+                        style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:8px">
+                        <div>Frontend</div>
+                        <div>92%</div>
+                    </div>
+                    <div class="bar" style="margin-top:8px"><i style="width:92%"></i></div>
+                </div>
+
+                <div style="margin-top:16px;display:flex;gap:8px">
+                    <button class="btn btn-outline" onclick="openLink('mailto:you@example.com')">Hire me</button>
+                    <div class="toggle" onclick="toggleTheme()">Toggle theme</div>
+                </div>
+            </aside>
+        </main>
+
+        <section id="projects" class="reveal delay-3">
+            <h3>Selected projects</h3>
+            <div class="grid-3" style="margin-top:12px">
+                <article class="project">
+                    <h4>Interactive Dashboard</h4>
+                    <p style="color:var(--muted);margin:8px 0">Single-page dashboard built with Angular, dynamic charts,
+                        and accessible components.</p>
+                    <div class="tags">
+                        <span class="tag">Angular</span><span class="tag">Responsive</span><span
+                            class="tag">Accessibility</span>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <h4>Portfolio Website</h4>
+                    <p style="color:var(--muted);margin:8px 0">A lightweight, animated portfolio implemented with modern
+                        CSS and vanilla JS.</p>
+                    <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                            class="tag">Animation</span></div>
+                </article>
+
+                <article class="project">
+                    <h4>Mobile App Prototype</h4>
+                    <p style="color:var(--muted);margin:8px 0">UI/UX prototype exported from Figma and implemented as a
+                        responsive web prototype.</p>
+                    <div class="tags"><span class="tag">Figma</span><span class="tag">Prototype</span><span
+                            class="tag">Design</span></div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-top:18px" class="edu-contact reveal">
+            <div class="edu-contact">
+                <div class="card">
+                    <h3>Education</h3>
+                    <p style="color:var(--muted)">Graduation: <strong>[Bachelor of Computer Application]</strong><br /><br>University:
+                        <strong>[CCS University, IIMT Group of College]</strong><br />Year: <strong>[2022-25]</strong></p>
+                    <!-- <p style="color:var(--muted);margin-top:6px">(Replace the placeholders above with your actual
+                        degree/university/year.)</p> -->
+                </div>
+
+                <div class="card" id="contact">
+                    <h3>Contact</h3>
+                    <p style="color:var(--muted);margin-bottom:6px">Email: <strong>saifiqbal988@gmail.com</strong></p>
+                    <p style="color:var(--muted);margin-bottom:6px">LinkedIn / GitHub:<strong> https://www.linkedin.com/in/saif-iqbal-02aa1b260 </strong> </p>
+
+                    <form onsubmit="submitContact(event)"
+                        style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+                        <input name="name" placeholder="Your name"
+                            style="padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.02);color:inherit"
+                            required />
+                        <input name="email" type="email" placeholder="Your email"
+                            style="padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.02);color:inherit"
+                            required />
+                        <textarea name="message" placeholder="Message" rows="3"
+                            style="padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.02);color:inherit"
+                            required></textarea>
+                        <button class="btn btn-primary" type="submit">Send message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer reveal" style="margin-top:22px">Built with ❤️ by Saif — handcrafted front‑end. Want this as
+            an Angular project or hosted live? Tell me which and I’ll produce the files.</div>
+    </div>
+
+    <script>
+        // small helpers and interactions
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function openLink(url) { window.location = url }
+        function downloadResume() {
+            // create a tiny placeholder resume download
+            const blob = new Blob(["Saif - Resume\n\nFill this with your CV details."], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = 'Saif_Resume.txt'; a.click();
+            URL.revokeObjectURL(url);
+        }
+        function submitContact(e) {
+            e.preventDefault();
+            const fm = e.target;
+            alert('Thanks, ' + fm.name.value + '! This form is a placeholder — replace with your backend or Formspree link.');
+            fm.reset();
+        }
+
+        // theme toggle (light/dark)
+        function toggleTheme() {
+            if (document.documentElement.style.getPropertyValue('--bg') === '#0f1724') {
+                document.documentElement.style.setProperty('--bg', '#f8fafc');
+                document.documentElement.style.setProperty('--card', '#ffffff');
+                document.documentElement.style.setProperty('--muted', '#4b5563');
+                document.documentElement.style.setProperty('--accent', '#06b6d4');
+                document.documentElement.style.setProperty('--accent-2', '#7c3aed');
+                document.body.style.color = '#0b1220';
+            } else {
+                document.documentElement.style.setProperty('--bg', '#0f1724');
+                document.documentElement.style.setProperty('--card', '#0b1220');
+                document.documentElement.style.setProperty('--muted', '#9aa4b2');
+                document.documentElement.style.setProperty('--accent', '#6ee7b7');
+                document.documentElement.style.setProperty('--accent-2', '#60a5fa');
+                document.body.style.color = '#e6eef6';
+            }
+        }
+
+        // animate progress bars on view
+        const bars = document.querySelectorAll('.bar > i');
+        function animateBars() { bars.forEach(i => i.style.width = i.style.width || i.getAttribute('data-w') || i.style.width); }
+        window.addEventListener('load', () => { setTimeout(() => { document.querySelectorAll('.reveal').forEach(el => el.style.opacity = '1'); }, 120); });
+    </script>
+
+</body>
+
+</html>
