@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update portfolio</title>
+    <title>Saif's portfolio</title>
     <link rel="stylesheet" href="./port.css">
 </head>
 
@@ -17,7 +17,7 @@
         <header>
             <div class="brand">
                 <div class="logo">
-                    <img src="./imgs/saif.jpeg" alt="logo img" width="80%" height="80%">
+                    <img src="/img/saif.jpeg" alt="logo img" width="80%" height="80%">
                 </div>
                 <div>
                     <h1>Saif — Front‑End Developer</h1>
@@ -38,7 +38,7 @@
                     delightful interfaces for web & mobile apps.</p>
                 <div class="cta">
                     <button class="btn btn-primary" onclick="scrollToSection('projects')">See projects</button>
-                    <button class="btn btn-outline" onclick="downloadResume()">Download resume</button>
+                    <button class="btn btn-outline" id="downloadbtn" onclick="downloadResume()">Download resume</button>
                 </div>
 
                 <section id="about" style="margin-top:20px">
@@ -129,8 +129,10 @@
             <div class="edu-contact">
                 <div class="card">
                     <h3>Education</h3>
-                    <p style="color:var(--muted)">Graduation: <strong>[Bachelor of Computer Application]</strong><br /><br>University:
-                        <strong>[CCS University, IIMT Group of College]</strong><br />Year: <strong>[2022-25]</strong></p>
+                    <p style="color:var(--muted)">Graduation: <strong>[Bachelor of Computer
+                            Application]</strong><br /><br>University:
+                        <strong>[CCS University, IIMT Group of College]</strong><br />Year: <strong>[2022-25]</strong>
+                    </p>
                     <!-- <p style="color:var(--muted);margin-top:6px">(Replace the placeholders above with your actual
                         degree/university/year.)</p> -->
                 </div>
@@ -138,7 +140,8 @@
                 <div class="card" id="contact">
                     <h3>Contact</h3>
                     <p style="color:var(--muted);margin-bottom:6px">Email: <strong>saifiqbal988@gmail.com</strong></p>
-                    <p style="color:var(--muted);margin-bottom:6px">LinkedIn / GitHub:<strong> https://www.linkedin.com/in/saif-iqbal-02aa1b260 </strong> </p>
+                    <p style="color:var(--muted);margin-bottom:6px">LinkedIn / GitHub:<strong>
+                            https://www.linkedin.com/in/saif-iqbal-02aa1b260 </strong> </p>
 
                     <form onsubmit="submitContact(event)"
                         style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
@@ -161,6 +164,7 @@
             an Angular project or hosted live? Tell me which and I’ll produce the files.</div>
     </div>
 
+    <!-- javaScript here start -->
     <script>
         // small helpers and interactions
         function scrollToSection(id) {
@@ -168,11 +172,31 @@
         }
         function openLink(url) { window.location = url }
         function downloadResume() {
+
             // create a tiny placeholder resume download
-            const blob = new Blob(["Saif - Resume\n\nFill this with your CV details."], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a'); a.href = url; a.download = 'Saif_Resume.txt'; a.click();
-            URL.revokeObjectURL(url);
+
+
+            const pdfUrl = "img\saif_resume.pdf";
+            fetch(pdfUrl).then(res => {
+                if (!res.ok) throw new Error("file not found");
+                return res.blob();
+            })
+            .then(blob => {
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = "img\saif_resume.pdf";
+                link.click();
+                URL.revokeObjectURL(link.href);
+            })
+            .catch(err => {
+                alert("Resume file not found or blocked.");
+                console.error(err);
+            });
+            a.href = pdfUrl;
+            a.download = "saif_resume.pdf";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
         function submitContact(e) {
             e.preventDefault();
